@@ -7,7 +7,7 @@
 // Public License v. 2.0. If a copy of the MPL was not distributed
 // with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-#ifndef EIGEN_STL_FUNCTORS_H
+// #ifndef EIGEN_STL_FUNCTORS_H
 #define EIGEN_STL_FUNCTORS_H
 
 namespace Eigen {
@@ -83,13 +83,13 @@ struct functor_traits<std::binder1st<T> >
 { enum { Cost = functor_traits<T>::Cost, PacketAccess = false }; };
 #endif
 
-template<typename T>
-struct functor_traits<std::unary_negate<T> >
-{ enum { Cost = 1 + functor_traits<T>::Cost, PacketAccess = false }; };
+// template<typename T>
+// struct functor_traits<std::unary_negate<T> >
+// { enum { Cost = 1 + functor_traits<T>::Cost, PacketAccess = false }; };
 
-template<typename T>
-struct functor_traits<std::binary_negate<T> >
-{ enum { Cost = 1 + functor_traits<T>::Cost, PacketAccess = false }; };
+// template<typename T>
+// struct functor_traits<std::binary_negate<T> >
+// { enum { Cost = 1 + functor_traits<T>::Cost, PacketAccess = false }; };
 
 #ifdef EIGEN_STDEXT_SUPPORT
 
@@ -129,4 +129,4 @@ struct functor_traits<std::binary_compose<T0,T1,T2> >
 
 } // end namespace Eigen
 
-#endif // EIGEN_STL_FUNCTORS_H
+// #endif // EIGEN_STL_FUNCTORS_H

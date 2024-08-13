@@ -6,7 +6,7 @@ from rpxdock.sampling import RotCart1Hier_f4, grid_sym_axis
 from rpxdock.search import make_plugs
 from willutil import Bunch
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def _test_args():
     kw = rp.app.defaults()

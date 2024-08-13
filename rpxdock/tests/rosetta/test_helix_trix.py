@@ -8,7 +8,7 @@ except ImportError:
 import rpxdock as rp
 
 def test_append_helix(C2_3hm4, helix):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     pose = rosetta.core.pose.Pose().assign(C2_3hm4)
     og_pose = rosetta.core.pose.Pose().assign(pose)
     rp.rosetta.helix_trix.append_Nhelix(pose)
@@ -20,7 +20,7 @@ def test_append_helix(C2_3hm4, helix):
     assert pose.chain(1) == og_pose.chain(1)
 
 def test_termini_direction(poses_list_helices):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     actual_dirs = [[True, True], [False, False], [True, False]]  #based on input; change in input is changed!
     # print(poses_list_helices)
     for i in range(len(poses_list_helices)):
@@ -32,7 +32,7 @@ def test_termini_direction(poses_list_helices):
         assert [Nin, Cin] == actual_dirs[i]
 
 def test_remove_helix(C2_3hm4, helix):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     pose = rosetta.core.pose.Pose().assign(C2_3hm4)
     print(pose.size())
     og_pose = rosetta.core.pose.Pose().assign(pose)
@@ -54,7 +54,7 @@ def test_remove_helix(C2_3hm4, helix):
     assert pose.__eq__(og_pose)
 
 def test_limit_flip_update():
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     kw = rp.app.defaults()
     kw.inputs = [["foo"], ["bar"], ["xfoo", 'xbar'], ["foobear"]]
     kw.termini_dir = [[[None, None]], [[True, False]], [[False, True], [True, False]], [[False, False]]]
@@ -71,7 +71,7 @@ def test_limit_flip_update():
     assert not (limit_flip_update_pose(True, True, 4, **kw)[0])
 
 def test_init_termini(mixed_inputs, helix):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     pose_list = mixed_inputs
     kw = rp.app.defaults()
     kw.inputs = [[inp] for inp in pose_list]
@@ -160,7 +160,7 @@ if __name__ == '__main__':
     # Everything below is to make bodies modified with terminal helices,
     # which are used in tests/search/test_onecomp and test_multicomp
 
-    # from pyrosetta import *
+    # from rosetta import *
     # c3_forbody=pose_from_pdb("/home/jenstanisl/test_rpx/test_appendhelix/ver_scaffolds/C3_3e6q_asu.pdb")
     # temp_make_bodies(c3_forbody, get_pose_cached("C2_REFS10_1.pdb.gz", rp.data.pdbdir))
     temp_make_bodies(poseC3, get_pose_cached("C2_REFS10_1.pdb.gz", rp.data.pdbdir))

@@ -4,7 +4,7 @@ from rpxdock.search import grid_search
 from willutil import Bunch
 import pytest
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def get_arg():
     kw = rp.app.defaults()

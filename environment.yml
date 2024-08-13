@@ -1,14 +1,14 @@
-name: rpxdock39
+name: rpxdock310
 channels:
  - conda-forge
  - https://pose:foldtree@conda.graylab.jhu.edu
  - schrodinger
 dependencies:
- - python<3.10
- - pymol-bundle
+ - python=3.10
+ - pymol-open-source
  - pyrosetta
  # - numpy=1.16.3
- - numpy 
+ - numpy<2 
  - numba
  - seaborn
  # - pandas=0.24.2
@@ -38,6 +38,6 @@ dependencies:
  - pip:
    - cppimport
    - deferred-import
-   # - git+https://github.com/willsheffler/willutil.git
+   - git+https://github.com/willsheffler/willutil.git
    # - breathe>=4.13.0
    # - exhale 

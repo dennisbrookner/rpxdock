@@ -4,7 +4,7 @@ import concurrent
 import pytest
 import numpy as np
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def test_cage_hier_onecomp_notrim(hscore, bodyC3):
     kw = rp.app.defaults()

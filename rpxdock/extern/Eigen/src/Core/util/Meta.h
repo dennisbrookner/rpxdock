@@ -8,7 +8,7 @@
 // Public License v. 2.0. If a copy of the MPL was not distributed
 // with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-#ifndef EIGEN_META_H
+// #ifndef EIGEN_META_H
 #define EIGEN_META_H
 
 #if defined(__CUDA_ARCH__)
@@ -285,12 +285,13 @@ protected:
   * upcoming next STL generation (using a templated result member).
   * If none of these members is provided, then the type of the first argument is returned. FIXME, that behavior is a pretty bad hack.
   */
-#if EIGEN_HAS_STD_RESULT_OF
-template<typename T> struct result_of {
-  typedef typename std::result_of<T>::type type1;
-  typedef typename remove_all<type1>::type type;
-};
-#else
+// #if EIGEN_HAS_STD_RESULT_OF
+// template<typename T> struct result_of {
+//   // typedef typename std::result_of<T>::type type1;
+//   typedef typename ::Eigen::internal::result_of<T>::type type1;
+//   typedef typename remove_all<type1>::type type;
+// };
+// #else
 template<typename T> struct result_of { };
 
 struct has_none {int a[1];};
@@ -366,7 +367,7 @@ struct result_of<Func(ArgType0,ArgType1,ArgType2)> {
     enum {FunctorType = sizeof(testFunctor(static_cast<Func*>(0)))};
     typedef typename ternary_result_of_select<Func, ArgType0, ArgType1, ArgType2, FunctorType>::type type;
 };
-#endif
+// #endif
 
 struct meta_yes { char a[1]; };
 struct meta_no  { char a[2]; };
@@ -489,4 +490,4 @@ T div_ceil(const T &a, const T &b)
 
 } // end namespace Eigen
 
-#endif // EIGEN_META_H
+// #endif // EIGEN_META_H

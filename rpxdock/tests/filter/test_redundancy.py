@@ -30,7 +30,7 @@ def debug_redundancy_layer():
                          **kw)
 
 def test_redundancy(hscore, body_cageA, body_cageB):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     kw = rp.app.defaults()
     kw.wts = wu.Bunch(ncontact=0.3, rpx=1.0)
     kw.beam_size = 2e4

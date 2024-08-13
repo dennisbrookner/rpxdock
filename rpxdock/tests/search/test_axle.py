@@ -4,7 +4,7 @@ import rpxdock as rp
 import pytest
 from willutil import Bunch
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def get_arg(**kw):
     arg = rp.app.defaults()

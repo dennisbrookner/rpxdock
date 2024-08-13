@@ -53,7 +53,7 @@ auto xform_eigen_to_py(XformArray xform, int size = -1) {
   using F = typename Xform::Scalar;
   if (size < 0) size = (int)xform.size();
   F *data = (F *)xform.data();
-  std::vector<size_t> shape{size, 4, 4};
+  std::vector<size_t> shape{static_cast<unsigned long>(size), 4, 4};
   std::vector<size_t> stride{16 * sizeof(F), 4 * sizeof(F), sizeof(F)};
   auto buf = pybind11::buffer_info(data, shape, stride);
   return pybind11::array_t<F>(buf);

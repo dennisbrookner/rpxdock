@@ -2,7 +2,7 @@ from rpxdock.rotamer.richardson import get_rotamer_space
 import numpy as np
 import pytest
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def test_richardson_space():
     rotspace = get_rotamer_space(disulf=False, concat=False)

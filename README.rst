@@ -13,6 +13,25 @@ Version 2 of the venerable tcdock and rpxdock programs in rosetta. This version 
 
 Read the `RPXDock manuscript <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010680>`_.
 
+Fork-specific changes
+#####################
+
+The following files have been changed in this fork:
+ * Several changes were made to ``environment.yml``
+    * The package requires ``python 3.10``
+    * ``willutil`` is mandatory
+    * ``numpy 2`` is not allowed
+    * ``pymol-bundle`` is changed to ``pymol-open-source`` for M1 Mac compatibility.
+ * Additionally, several changes were made in the C++ code. I don't totally understand them.
+ * Many test files were changes. I think this was a mistake.
+
+Fork-specific installation instructions
+---------------------------------------
+Clone this repo, ``cd`` into it, and then install as follows: ::
+    conda env create --file environment.yml
+    pip install .
+
+
 Running Rpxdock
 ###############
 The first time you run rpxdock, it will build some C++ files, this takes a few minutes. ::

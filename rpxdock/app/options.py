@@ -621,7 +621,7 @@ def default_cli_parser(parent=None, **kw):
            help='dump result filenames in a Summary.txt file')
 
     addarg("--limit_rotation", type=float, default=9e9, help='limit sampling to rotations less than X radians')
-    addarg("--use_rosetta", action='store_true', help='allow use of pyrosetta')
+    addarg("--use_rosetta", action='store_true', help='allow use of rosetta')
 
     addarg("--mc_dump_initial_samples",
            action='store_true',

@@ -6,7 +6,7 @@ from willutil import Bunch
 
 ic.configureOutput(includeContext=True)
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def main():
     hscore = rp.data.small_hscore()

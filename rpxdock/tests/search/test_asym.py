@@ -5,7 +5,7 @@ import rpxdock as rp
 import willutil as wu
 from concurrent.futures import ThreadPoolExecutor
 
-pytest.importorskip('pyrosetta')
+pytest.importorskip('rosetta')
 
 def main():
     # hscore = rp.data.small_hscore()

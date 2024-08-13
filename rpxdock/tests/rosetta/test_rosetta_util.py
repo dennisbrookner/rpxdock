@@ -3,7 +3,7 @@ from rpxdock.rosetta.rosetta_util import *
 from rpxdock.data import pdbdir
 
 def test_get_sc_coords(top7):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     anames, acoords = get_sc_coords(top7)
     assert len(anames) == len(acoords) == top7.size()
     for a, c in zip(anames, acoords):
@@ -28,7 +28,7 @@ def test_get_sc_coords(top7):
     print(aset)
 
 def test_get_bb_coords(top7):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     crd = get_bb_coords(top7, recenter_input=False).reshape(-1, 4)
     cen = np.mean(crd, axis=0)
     cen[3] = 0

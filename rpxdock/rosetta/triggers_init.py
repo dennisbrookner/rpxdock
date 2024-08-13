@@ -60,7 +60,7 @@ def create_residue(resname, typeset='fa_standard'):
     return rfactory.create_residue(rts.name_map(resname))
 
 def get_pose_cached(fname, pdbdir=rp.data.pdbdir):
-    if 'pyrosetta' not in sys.modules:
+    if 'rosetta' not in sys.modules:
         return None
     path = os.path.join(pdbdir, fname)
     h = str(rp.util.hash_str_to_int(version().encode()))

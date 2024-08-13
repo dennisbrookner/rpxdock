@@ -69,7 +69,7 @@ def test_result_tarball():
     # ic(r.attrs)
     # ic(r2.attrs)
     # assert 0
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     with tempfile.TemporaryDirectory() as tmpdir:
 
         r = rp.data.get_test_data('test_result.pickle')

@@ -1,5 +1,5 @@
 # from rif import rcl
-# from rif.rcl import pyrosetta, rosetta
+# from rif.rcl import rosetta, rosetta
 # from rif.chem.biochem import aa_name3s
 import os
 import numpy as np
@@ -156,7 +156,7 @@ def sample_rotamer_space(rotspace, resl=[10, 10, 10, 10]):
     # for
 
 def get_rotamer_index(rotspace):
-    """extract AA structural info via pyrosetta"""
+    """extract AA structural info via rosetta"""
     # print('get_rotamer_coords')
     rcl.init_check()
     chem_manager = rosetta.core.chemical.ChemicalManager

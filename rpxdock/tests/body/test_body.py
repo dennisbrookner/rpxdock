@@ -6,7 +6,7 @@ import rpxdock as rp
 import rpxdock.homog as hm
 from rpxdock.body import Body
 
-# from pyrosetta import rosetta as ros, pose_from_file
+# from rosetta import rosetta as ros, pose_from_file
 import rpxdock.rosetta.triggers_init
 
 # ic.configureOutput(includeContext=True)
@@ -17,7 +17,7 @@ def main():
     # test_body_create()
 
 def test_body_ss_info():
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     kw = rp.app.defaults()
     kw.helix_trim_max = 6
     pdb = rp.data.datadir + '/pdb/C3_1na0-1_1.pdb.gz'
@@ -27,7 +27,7 @@ def test_body_ss_info():
     # get_trimming_subbodies(body, pose)
 
 def test_body_create():
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     pdb = rp.data.datadir + '/pdb/C3_1na0-1_1.pdb.gz'
     b0 = Body(pdb)
     b1 = Body(pdb, allowed_res=None)
@@ -45,7 +45,7 @@ def test_body_create():
     assert len(b0.cterms) == 1
 
 def test_body(C2_3hm4, C3_1nza, sym1=2, sym2=3):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     body1 = Body(C2_3hm4, sym1)
     body2 = Body(C3_1nza, sym2)
     print(body2.nres)
@@ -106,7 +106,7 @@ def test_body(C2_3hm4, C3_1nza, sym1=2, sym2=3):
     # body2.dump_pdb_from_bodies("body2.pdb")
 
 def test_body_pickle(C3_1nza, tmpdir):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     b = Body(C3_1nza)
     with open(tmpdir + "/a", "wb") as out:
         _pickle.dump(b, out)
@@ -140,7 +140,7 @@ def test_body_copy_xform(body_tiny):
 
 #function to test modifications to body by adding helices aligned with termini
 def test_body_with_terminal_helices(C2_3hm4, C3_1nza, helix):
-    pytest.importorskip('pyrosetta')
+    pytest.importorskip('rosetta')
     from pyrosetta.rosetta.core import pose
     inp1 = pose.Pose().assign(C2_3hm4)
     inp2 = pose.Pose().assign(C2_3hm4)
