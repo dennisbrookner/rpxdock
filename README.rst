@@ -32,6 +32,7 @@ Clone this repo, ``cd`` into it, and then install as follows: ::
     conda env create --file environment.yml
     pip install .
 
+Note that the ``hscore`` directory is not included in this install and must be installed separately. You can do this by following the link in the manuscript.
 
 Running Rpxdock
 ###############

@@ -1,3 +1,0 @@
-cppimport
-deferred-import
-git+https://github.com/willsheffler/willutil.git

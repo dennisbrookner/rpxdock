@@ -103,3 +103,6 @@ hscore
 
 /tmp
 
+conda*.txt
+
+**/__pycache__
