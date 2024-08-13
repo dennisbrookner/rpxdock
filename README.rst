@@ -28,6 +28,7 @@ The following files have been changed in this fork:
 Fork-specific installation instructions
 ---------------------------------------
 Clone this repo, ``cd`` into it, and then install as follows: ::
+
     conda env create --file environment.yml
     pip install .
 
