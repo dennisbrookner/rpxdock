@@ -17,6 +17,7 @@ Fork-specific changes
 #####################
 
 The following files have been changed in this fork:
+
  * Several changes were made to ``environment.yml``
     * The package requires ``python 3.10``
     * ``willutil`` is mandatory
